@@ -119,7 +119,8 @@ class DoctrineChoiceLoader implements ChoiceLoaderInterface
             foreach ($choices as $i => $object) {
                 if ($object instanceof $this->class) {
                     // Make sure to convert to the right format
-                    $values[$i] = (string) $this->idReader->getIdValue($object);
+                    //$values[$i] = (string) $this->idReader->getIdValue($object);
+                    $values[$i] = $this->idReader->getIdValue($object);
                 }
             }
 
