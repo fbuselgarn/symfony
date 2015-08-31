@@ -201,10 +201,7 @@ class ArrayChoiceList implements ChoiceListInterface
                 continue;
             }
 
-//            This string cast makes our multiple selects in our document form break
-//            compare https://github.com/symfony/symfony/issues/15403
-//            $choiceValue = (string) call_user_func($value, $choice);
-            $choiceValue = call_user_func($value, $choice);
+            $choiceValue = (string) call_user_func($value, $choice);
             $choicesByValues[$choiceValue] = $choice;
             $keysByValues[$choiceValue] = $key;
             $structuredValues[$key] = $choiceValue;
