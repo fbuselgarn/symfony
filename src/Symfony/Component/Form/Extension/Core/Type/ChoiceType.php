@@ -185,7 +185,7 @@ class ChoiceType extends AbstractType
         // avoid making the type check inside the closure.
         if ($options['multiple']) {
             $view->vars['is_selected'] = function ($choice, array $values) {
-                return in_array($choice, $values, true);
+                return in_array($choice, array_map('strval', $values), true);
             };
         } else {
             $view->vars['is_selected'] = function ($choice, $value) {

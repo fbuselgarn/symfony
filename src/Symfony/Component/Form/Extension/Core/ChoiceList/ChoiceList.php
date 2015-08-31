@@ -394,7 +394,7 @@ class ChoiceList implements ChoiceListInterface
      */
     protected function isPreferred($choice, array $preferredChoices)
     {
-        return in_array($choice, $preferredChoices, true);
+        return in_array($choice, array_map('strval', $preferredChoices), true);
     }
 
     /**
